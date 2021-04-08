@@ -1,0 +1,4 @@
+{
+  "semi": false, //在语句结尾处加上分号,false是不加分号
+  "singleQuote": true
+}
