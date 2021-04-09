@@ -24,7 +24,7 @@
                 <i :class="iconObj[item.id]"></i>
                 <span>{{item.authName}}</span>
               </template>
-              <el-menu-item @click="saveNavState('/'+item.path)" :index="'/'+subItem.path + ''" v-for="subItem in item.children" :key="subItem.id">
+              <el-menu-item @click="saveNavState('/'+subItem.path)" :index="'/'+subItem.path" v-for="subItem in item.children" :key="subItem.id">
                 <template slot="title">
                   <i class="el-icon-menu"></i>
                   <span>{{subItem.authName}}</span>
@@ -59,6 +59,7 @@ export default {
   created() {
     this.getMenusList()
     this.activePath = window.sessionStorage.getItem('activePath')
+    console.log(this.activePath)
   },
   methods: {
     logout() {
@@ -69,6 +70,7 @@ export default {
       const res = await getMenus()
       if (res.meta.status == 200){
         this.menuList = res.data
+        console.log(this.menuList)
       } else {
         this.$message.error(res.meta.msg)
       }
