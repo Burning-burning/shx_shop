@@ -52,7 +52,6 @@ export default {
       } else {
         this.$message.error(res.meta.msg)
       }
-      console.log(res)
     }
   },
   created() {

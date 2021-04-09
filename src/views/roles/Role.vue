@@ -119,7 +119,6 @@ export default {
       const keys = [...this.$refs.treeRef.getCheckedKeys(), ...this.$refs.treeRef.getHalfCheckedKeys()]
       const strKeys = keys.join(',')
       const res = await saveRightsById(this.roleId, strKeys)
-      console.log(res)
       if (res.meta.status == 200){
         this.$message.success(res.meta.msg)
       } else {

@@ -59,7 +59,6 @@ export default {
   created() {
     this.getMenusList()
     this.activePath = window.sessionStorage.getItem('activePath')
-    console.log(this.activePath)
   },
   methods: {
     logout() {
@@ -70,7 +69,6 @@ export default {
       const res = await getMenus()
       if (res.meta.status == 200){
         this.menuList = res.data
-        console.log(this.menuList)
       } else {
         this.$message.error(res.meta.msg)
       }

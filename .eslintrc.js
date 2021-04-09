@@ -21,7 +21,8 @@ module.exports = {
     'indent': 0,
     'no-trailing-spaces': 0,
     'semi': 0,
-    'eqeqeq': ["off"]
+    'eqeqeq': ["off"],
+    'camelcase': 0
 
   }
 }

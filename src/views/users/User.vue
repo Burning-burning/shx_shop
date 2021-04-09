@@ -218,7 +218,6 @@ export default {
         return this.$message.error('请选择要分配的角色')
       }
       const res = await allocateRole(this.roleId, this.selectedRoleId)
-      console.log(res)
       if (res.meta.status == 200){
         this.$message.success(res.meta.msg)
       } else {
@@ -250,7 +249,6 @@ export default {
     handleSizeChange(newSize) {
       this.queryInfo.pagesize = newSize
       this.getUsersList()
-      // console.log(newSize)
     },
     async deleteUser(id) {
       const confirmResult = await this.$confirm('此操作将永久删除该用户, 是否继续?', '提示', {
@@ -288,7 +286,6 @@ export default {
       })
     },
     handleCurrentChange(newPage) {
-      // console.log(newPage)
       this.queryInfo.pagenum = newPage
       this.getUsersList()
     },
