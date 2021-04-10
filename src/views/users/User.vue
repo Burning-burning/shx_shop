@@ -275,7 +275,6 @@ export default {
         }
         const { username, password, email, mobile } = this.addForm
         const res = await addUser(username, password, email, mobile)
-        console.log(res)
         if (res.meta.status != 201){
           this.$message.error(res.meta.msg)
         } else {
