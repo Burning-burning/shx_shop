@@ -59,7 +59,6 @@ export default {
     async getGoodList() {
       const { query, pagenum, pagesize } = this.queryInfo
       const res = await getGoodsList(query, pagenum, pagesize)
-      console.log(res)
       if (res.meta.status == 200){
         this.goodsList = res.data.goods
         this.total = res.data.total
