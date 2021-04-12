@@ -256,13 +256,11 @@ export default {
         this.onlyTableData = []
       } else {
         const res = await getParams(this.cateId, this.activeName)
-        
         res.data.forEach(item => {
           item.attr_vals = item.attr_vals ? item.attr_vals.split(' ') : []
           item.inputVisible = false
           item.inputValue = ''
         })
-        console.log(res)
         if (res.meta.status == 200){
           if (this.activeName == 'many'){
             this.manyTableData = res.data
